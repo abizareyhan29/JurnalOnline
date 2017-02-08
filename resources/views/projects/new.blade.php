@@ -7,7 +7,7 @@
     <h1 class="page-header">Project Baru</h1>
 
     <div class="col-lg-6">
-        <form class="form-vertical" role="form" method="post" action="{{ route('projects.store') }}">
+        <form class="form-vertical" role="form" method="post" action="{{ url('projects.store') }}">
             <div class="form-group{{ $errors->has('status') ? ' has-error' : '' }}">
                 <label for="status" class="control-label">Pilih Status</label>
                 <select name="status" id="status">

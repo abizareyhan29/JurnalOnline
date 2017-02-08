@@ -7,7 +7,7 @@
     @include('layouts.partials.alerts')
     <h1 class="page-header">
         Projects
-        <a class="btn btn-info" href="{{ route('projects.create') }}">Project Baru</a>
+        <a class="btn btn-info" href="{{ url('projects.create') }}">Project Baru</a>
     </h1>
 
     <div class="container">
