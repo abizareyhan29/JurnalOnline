@@ -1,7 +1,11 @@
 <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
         <li style="margin-left:20px;">
-            <img src="{{url('img/profile/'.Auth::user()->photo)}}" height="50" width="50" style="border-radius:25px;" />
+          @if(Auth::user()->photo!='')
+          <img src="{{url('img/profile/'.Auth::user()->photo)}}" height="50" width="50" style="border-radius:25px;" />
+          @else
+          <img src="{{url('img/default.png')}}" height="50" width="50" style="border-radius:25px;" />
+          @endif
         </li>
         <li><a href="#"> @ {{ Auth::user()->username }}</a></li>
       <!-- <a href="#">Semua Project<span class="sr-only">(current)</span></a></li> -->

@@ -44,12 +44,14 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        $authStatus = Auth::attempt($request->only(['email', 'password']), $request->has('remember'));
-        if (!$authStatus) {
-            return redirect()->back()->with('warning', 'Invalid Email or Password');
+        // $authStatus = Auth::attempt($request->only(['email', 'password']), $request->has('remember'));
+
+        if (Auth::attempt(['email'=>$request->input('email'),'password'=>$request->input('password')],true)) {
+          return redirect()->route('projects.index')->with('info', 'You are now signed in');
         }
 
-        return redirect()->route('projects.index')->with('info', 'You are now signed in');
+        return 'asu';
+        // return redirect()->back()->with('warning', 'Invalid Email or Password');
     }
 
     public function logOut()
