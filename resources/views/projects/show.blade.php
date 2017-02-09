@@ -18,7 +18,7 @@
               <p>Tasks: {{ count($tasks) }} </p>
               <p>Comments: {{ count($comments) }}</p>
               <p>Attachments: {{ count($files) }} </p>
-              <p><a href="/projects/{{ $project->id }}/edit">Edit</a></p>
+              <p><a href="{{url('projects/' . $project->id .'/edit') }}">Edit</a></p>
                   <button class="btn btn-circle btn-danger delete"
                           data-action="{{ url('projects/' . $project->id) }}"
                           data-token="{{csrf_token()}}">

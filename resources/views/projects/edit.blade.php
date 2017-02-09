@@ -8,7 +8,7 @@
 
     @include('layouts.partials.alerts')
     <div class="col-lg-6">
-        <form class="form-vertical" role="form" method="post" action="{{ url('projects.update', $project->id) }}">
+        <form class="form-vertical" role="form" method="post" action="{{ route('projects.update', $project->id) }}">
             <div class="form-group{{ $errors->has('project_status') ? ' has-error' : '' }}">
                 <label for="status" class="control-label">Pilih Status</label>
                 <select name="project_status" id="status">
